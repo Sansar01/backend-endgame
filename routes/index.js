@@ -22,7 +22,8 @@ router.get("/profile",isLoggedIn, async function(req,res){
 router.post("/register", function(req,res){
   var userdata = new userModel({  // Initialize userModel
     username : req.body.username,
-    secret:req.body.secret
+
+      email:req.body.email
   })
 
   // Register user with hashed password
