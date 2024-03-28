@@ -38,6 +38,19 @@ router.post("/editDetails",isLoggedIn, function(req,res){
 
   })
 })
+//upload file
+router.post("/upload",isLoggedIn,upload.single('file'), async function(req,res){
+  if(!req.file ){
+    return res.status(400).send('No files were uploaded')
+   }
+   const user = await userModel.findOne({username : req.session.passport.user})
+ 
+   
+   await user.save()
+   
+   res.redirect("/profile");
+  
+   })
 
 // Create user object
 router.post("/register", function(req,res){
