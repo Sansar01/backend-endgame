@@ -12,8 +12,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get("/profile",isLoggedIn, function(req,res){
-  res.render('profile');
+router.get("/profile",isLoggedIn, async function(req,res){
+ 
+  res.render('profile' );
 })
 
 
