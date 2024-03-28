@@ -26,6 +26,19 @@ router.get("/profile",isLoggedIn, async function(req,res){
 })
 
 
+router.post("/editDetails",isLoggedIn, function(req,res){
+  var userdata= new userModel({
+   fullName: req.body.fullName,
+   mobile:  req.body.mobile,
+  
+   intro:  req.body.intro,
+   profile:  req.body.profile,
+   gender:  req.body.gender,
+
+
+  })
+})
+
 // Create user object
 router.post("/register", function(req,res){
   var userdata = new userModel({  // Initialize userModel
