@@ -7,7 +7,7 @@ const userSchema = mongoose.Schema({
    email:String,
    password:String,
    secret :String,
-   fullName: { type: String, required: true },
+   fullName: { type: String},
    mobile: { type: String },
    registeredAt: { type: Date, default: Date.now },
    intro: { type: String },

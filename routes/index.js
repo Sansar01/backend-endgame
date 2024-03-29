@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 const userModel = require("./users");
+
+const upload = require('./multer')
 const passport = require('passport');
 const localStrategy = require("passport-local");
 passport.use(new localStrategy(userModel.authenticate()));
