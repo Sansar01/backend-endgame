@@ -14,6 +14,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/edit', isLoggedIn, function(req, res, next) {
+  res.render('edit');
+});
+
 router.get("/profile",isLoggedIn, async function(req,res){
 
 
